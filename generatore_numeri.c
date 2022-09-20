@@ -19,7 +19,7 @@ int main()
                 i--;
                 break;
             }
-            if (j == i - 1)
+            else if (j == i - 1)
             {
                 numeri[i] = numero;
                 fprintf(file, "%d\n", numeri[i]);
