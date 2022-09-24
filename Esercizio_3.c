@@ -34,5 +34,36 @@
             printf("%d\n", array[i]);
         }       
     }
-
+    printf("5) Stampa tutti i numeri dispari\n");
+    for(int i = 0; i < dim; i++) {
+        if(array[i] % 2 != 0) {
+            printf("%d\n", array[i]);
+        }       
+    }
+    printf("6) Ricerca di un numero nell’array (letto in input)\nInserisci il numero da cercare\n");
+    int n;
+    int cont = 0;
+    scanf("%d", &n);
+    for(int i = 0; i < dim; i++) {
+        if(array[i] == n) {
+            cont = cont + 1;
+        }       
+    }
+    printf("Trovato %d volte\n", cont);
+    printf("7) Eliminare un elemento dell’array (se esistente)\nInserisci numero da eliminare\n");
+    int e;
+    int dime;
+    scanf("%d", &e);
+    for(int i = 0; i < dim; i++) {
+        while(array[i] = e) {
+            dime = dim - 1;
+            for(int j = i; j < dime; j++) {
+                array[j] = array[j+1];                    
+            }   
+        }       
+    }
+    for(int i = 0; i < dime; i++) {
+        printf("%d\n", array[i]);
+    }
+    
  }
