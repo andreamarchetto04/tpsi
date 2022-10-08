@@ -4,7 +4,31 @@
  
 #define DIM 100
 
+void riordinaCrescente(int array[], int partenza, int fine) {
+    int temp;
+    for(int i = partenza; i < fine; i++) {
+        for(int j = partenza; j < fine; j++) {
+       	    if(array[j] > array[j + 1]) {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
 
+void riordinaDecrescente(int array[], int partenza, int fine) {
+    int temp;
+    for(int i = partenza; i < fine; i++) {
+        for(int j = partenza; j < fine; j++) {
+       	    if(array[j] < array[j + 1]) {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
 
 int main() {
   int a[DIM];
@@ -22,15 +46,7 @@ int main() {
     }
   }
 
-    for(int i = 0; i < DIM; i++) {
-        for(int j = 0; j < DIM; j++) {
-       	    if(a[j] > a[j + 1]) {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
+    riordinaCrescente(a, 0, DIM);
 
 
   for(int i = 0; i < DIM; i++) {
@@ -71,25 +87,10 @@ int main() {
             }	                  
         }            
     }
-    for(int i = 20; i < 40; i++) {
-        for(int j = 20; j < 40; j++) {
-       	    if(a[j] < a[j + 1]) {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
+    
+    riordinaDecrescente(a, 20, 40);
 
-    for(int i = 40; i < DIM; i++) {
-        for(int j = 40; j < DIM; j++) {
-       	    if(a[j] > a[j + 1]) {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
+    riordinaCrescente(a, 40, DIM);
 
     for (int i = 0; i < DIM; i++)
     {
@@ -101,4 +102,3 @@ int main() {
     printf("\n");
 
 }
-
